@@ -28,6 +28,20 @@ describe('friendlyMessage', () => {
     expect(friendlyMessage({ code: 'PGRST116', message: 'no rows' })).toMatch(/couldn't find/)
   })
 
+  it('says so when the database tables have not been created yet', () => {
+    const missingTable = {
+      code: 'PGRST205',
+      message: "Could not find the table 'public.catalog_places' in the schema cache",
+    }
+    expect(friendlyMessage(missingTable)).toMatch(/database isn't set up yet/)
+    expect(friendlyMessage({ code: '42P01', message: 'relation "places" does not exist' })).toMatch(
+      /supabase\/migrations/,
+    )
+    expect(friendlyMessage({ code: 'PGRST202', message: 'Could not find the function' })).toMatch(
+      /isn't set up yet/,
+    )
+  })
+
   it('never leaks raw database messages', () => {
     const message = friendlyMessage({
       code: 'XX000',

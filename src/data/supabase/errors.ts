@@ -29,6 +29,17 @@ export function friendlyMessage(error: unknown): string {
   const e: ErrorLike = typeof error === 'object' && error !== null ? error : {}
   const message = (e.message ?? '').toLowerCase()
 
+  // The tables or functions from supabase/migrations haven't been created in this project yet.
+  if (
+    e.code === 'PGRST205' ||
+    e.code === 'PGRST202' ||
+    e.code === '42P01' ||
+    e.code === '42883' ||
+    message.includes('schema cache')
+  ) {
+    return "The database isn't set up yet. In Supabase, run the SQL files from supabase/migrations (0001, then 0002) in the SQL Editor."
+  }
+
   if (
     error instanceof TypeError ||
     message.includes('failed to fetch') ||
@@ -55,8 +66,11 @@ export function friendlyMessage(error: unknown): string {
   return 'Something went wrong on our side. Please try again.'
 }
 
-export const friendlyError = (error: unknown): RepositoryError =>
-  new RepositoryError(friendlyMessage(error))
+export function friendlyError(error: unknown): RepositoryError {
+  // People see the friendly text; the raw database error goes to the browser console for debugging.
+  console.error('[supabase]', error)
+  return new RepositoryError(friendlyMessage(error))
+}
 
 /**
  * Throws a friendly error if a Supabase call failed, otherwise returns its data.
