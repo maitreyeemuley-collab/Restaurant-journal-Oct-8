@@ -1,0 +1,78 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.legend {
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.dotWant {
+  background: var(--color-primary);
+}
+.dotVisited {
+  background: var(--color-visited);
+}
+
+/* Leaflet uses z-index up to 1000 internally; isolate it so the map can never paint over the
+   bottom tab bar, the Quick save button or toasts. */
+.map {
+  isolation: isolate;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+}
+
+.leaflet {
+  height: min(62dvh, 560px);
+  min-height: 340px;
+  width: 100%;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+}
+
+.note {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.unlocated ul {
+  margin: var(--space-2) 0 0;
+  padding-left: var(--space-5);
+}
+
+.unlocated li {
+  min-height: 32px;
+}

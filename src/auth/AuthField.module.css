@@ -1,0 +1,52 @@
+/* Look comes from the Figma sign-in card: 12px radius, 1px #d0c4b0 border, 16px placeholder text. */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.control {
+  position: relative;
+  display: flex;
+}
+
+.input {
+  width: 100%;
+  min-height: 44.85px; /* design height; also clears the 44px touch target */
+  padding: 10px 12px;
+  line-height: normal;
+  border: 1px solid var(--auth-border, #d0c4b0);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--auth-text, #2c2c2c);
+  font-size: 1rem;
+}
+
+.input::placeholder {
+  color: rgb(44 44 44 / 50%);
+  opacity: 1;
+}
+
+.input:focus-visible {
+  border-color: var(--color-focus);
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+
+.withTrailing {
+  padding-right: 64px;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--auth-text-muted, #5a5a5a);
+}
+
+.error {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-danger);
+}

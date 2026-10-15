@@ -1,0 +1,42 @@
+:root {
+  /* Palette: warm, food-friendly, restrained. All text pairings meet WCAG AA. */
+  --color-bg: #faf5ee;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f3ebe0;
+  --color-border: #e3d7c6; /* decorative dividers and cards */
+  --color-control-border: #857667; /* inputs, chips, buttons: 3:1+ against white and cream */
+  --color-text: #2b2420;
+  --color-text-muted: #6b5d52;
+  --color-primary: #b4472b; /* terracotta: Want to try */
+  --color-primary-strong: #983a22;
+  --color-on-primary: #ffffff;
+  --color-visited: #5f7a3a; /* olive: Visited */
+  --color-visited-bg: #e9efdc;
+  --color-want-bg: #f8e3da;
+  --color-accent: #e0a526; /* stars */
+  --color-danger: #a62b2b;
+  --color-focus: #1b5fd1;
+
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgb(43 36 32 / 8%), 0 4px 14px rgb(43 36 32 / 6%);
+  --shadow-float: 0 6px 20px rgb(43 36 32 / 25%);
+
+  --tap-target: 44px;
+  --bottom-nav-height: 64px;
+  --side-nav-width: 232px;
+}

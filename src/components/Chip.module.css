@@ -1,0 +1,51 @@
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.scroll {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: var(--space-1);
+  scrollbar-width: none;
+  margin-inline: calc(var(--space-4) * -1);
+  padding-inline: var(--space-4);
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .scroll {
+    flex-wrap: wrap;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  min-height: var(--tap-target);
+  padding: 0 var(--space-4);
+  border: 1.5px solid var(--color-control-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: var(--color-surface-alt);
+}
+
+.selected,
+.selected:hover {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-bg);
+}

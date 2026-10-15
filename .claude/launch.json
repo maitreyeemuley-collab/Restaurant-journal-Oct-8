@@ -1,0 +1,27 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "restaurant-journal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5173",
+        "--strictPort"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "restaurant-journal-phone",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:phone"
+      ],
+      "port": 5175
+    }
+  ]
+}

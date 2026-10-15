@@ -1,0 +1,51 @@
+.region {
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* sits above the floating Quick save button (56px) on phones */
+  bottom: calc(
+    var(--bottom-nav-height) + var(--space-4) + 56px + var(--space-3) + env(safe-area-inset-bottom)
+  );
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-4);
+  pointer-events: none;
+  z-index: 60;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: 440px;
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--color-text);
+  color: var(--color-bg);
+  box-shadow: var(--shadow-float);
+  font-size: 0.95rem;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: #ffd9c9;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.action:hover {
+  background: rgb(255 255 255 / 12%);
+}
+
+@media (min-width: 768px) {
+  .region {
+    bottom: var(--space-5);
+    left: var(--side-nav-width);
+  }
+}

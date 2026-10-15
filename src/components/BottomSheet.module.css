@@ -1,0 +1,66 @@
+.sheet {
+  width: 100%;
+  max-width: 100%;
+  margin: auto 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--color-surface);
+  color: var(--color-text);
+  max-height: 92dvh;
+  overflow-y: auto;
+}
+
+.sheet::backdrop {
+  background: rgb(43 36 32 / 50%);
+}
+
+.sheet[open] {
+  animation: slide-up 0.2s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-4) calc(var(--space-5) + env(safe-area-inset-bottom));
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+}
+.close:hover {
+  background: var(--color-surface-alt);
+}
+
+@media (min-width: 768px) {
+  .sheet {
+    max-width: 520px;
+    margin: auto;
+    border-radius: var(--radius-lg);
+  }
+  .inner {
+    padding: var(--space-5);
+  }
+}

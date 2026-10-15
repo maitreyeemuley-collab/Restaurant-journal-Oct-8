@@ -1,0 +1,152 @@
+/*
+ * Values below come from the Figma sign-in card ("Container (Restaurant Journal)").
+ * They are scoped to this screen on purpose: the rest of the app keeps its own tokens.
+ */
+.page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--space-6) var(--space-4);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 384px;
+}
+
+.card {
+  --auth-border: #d0c4b0;
+  --auth-surface-muted: #e8dfd0;
+  --auth-text: #2c2c2c;
+  --auth-text-muted: #5a5a5a;
+  --auth-accent: #c1624f;
+  --auth-accent-text: #983a22;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid var(--auth-border);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--auth-text);
+  box-shadow:
+    0 1px 1.5px rgb(0 0 0 / 10%),
+    0 1px 1px rgb(0 0 0 / 10%);
+}
+
+/* Sign in / Create account toggle */
+.tabs {
+  display: flex;
+  height: 40px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--auth-surface-muted);
+}
+
+.tab {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--auth-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+/* The toggle looks 40px tall, but the touch area is 44px. */
+.tab::after {
+  content: '';
+  position: absolute;
+  inset: -6px 0;
+}
+
+.tabActive {
+  background: #fff;
+  color: var(--auth-text);
+  box-shadow: 0 1px 1.5px rgb(0 0 0 / 8%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.submit {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--auth-accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.submit::after {
+  content: '';
+  position: absolute;
+  inset: -2px 0;
+}
+
+.submit:hover:not(:disabled) {
+  background: #b0553f;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formError {
+  padding: 12px;
+  border-radius: 12px;
+  background: #fbeaea;
+  color: var(--color-danger);
+  font-weight: 500;
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demoNotice {
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--color-want-bg);
+  color: #5c2514;
+  font-size: 0.95rem;
+}
+
+.demoNotice a {
+  color: inherit;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .page {
+    align-items: center;
+  }
+}
